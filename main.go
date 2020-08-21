@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	model "github.com/JIeeiroSst/models"
+	model "github.com/JIeeiroSst/models/admin"
 	"github.com/gorilla/mux"
 )
 
