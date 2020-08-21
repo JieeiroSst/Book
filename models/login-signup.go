@@ -75,6 +75,6 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 func LogoutHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		session.ClearSession(w)
-		http.Redirect(w, r, "/admin/login", 302)
 	}
+	http.Redirect(w, r, "/admin/login", 302)
 }
