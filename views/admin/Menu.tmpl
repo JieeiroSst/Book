@@ -1,0 +1,41 @@
+{{ define "Menu" }}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">keikibook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/admin">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link active" href="/admin/employe">employe</a>
+      <a class="nav-link active" href="/admin/book">book</a>
+    </div>
+  </div>
+
+  <form class="form-inline">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">@</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </form>
+
+  <form class="form-inline" method="POST" action="logout">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <p>{{.username}}</p>
+      </div>
+    </div>
+  </form>
+
+  <form class="form-inline" method="POST" action="logout">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <input type="button" value="logout" name="logout">
+      </div>
+    </div>
+  </form>
+
+</nav>
+{{ end }}

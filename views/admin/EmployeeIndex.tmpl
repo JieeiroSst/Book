@@ -1,0 +1,31 @@
+{{ define "EmployeeIndex" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> List employe </h2>
+    <a href="/admin/employe/new">New</a>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">View</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td scope="row">{{ .Id }}</td>
+        <td> {{ .Name }} </td>
+        <td>{{ .City }} </td>
+        <td><a href="/admin/employe/show?id={{ .Id }}">View</a></td>
+        <td><a href="/admin/employe/edit?id={{ .Id }}">Edit</a></td>
+        <td><a href="/admin/employe/delete?id={{ .Id }}">Delete</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}

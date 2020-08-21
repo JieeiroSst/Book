@@ -1,0 +1,39 @@
+package main
+
+import (
+	"log"
+	"net/http"
+
+	model "github.com/JIeeiroSst/models"
+	"github.com/gorilla/mux"
+)
+
+func main() {
+	route := mux.NewRouter()
+	log.Println("Server started on: http://localhost:8080")
+	route.HandleFunc("/admin", model.Home)
+
+	route.HandleFunc("/admin/login", model.ShowLogin)
+	route.HandleFunc("/admin/logins", model.Signin)
+	route.HandleFunc("/admin/signup", model.ShowSignUp)
+	route.HandleFunc("/admin/signups", model.Signup)
+	route.HandleFunc("/admin/logout", model.LogoutHandler)
+	route.HandleFunc("/admin/bug", model.Bug)
+
+	route.HandleFunc("/admin/employe", model.Index)
+	route.HandleFunc("/admin/employe/show", model.Show)
+	route.HandleFunc("/admin/employe/new", model.New)
+	route.HandleFunc("/admin/employe/edit", model.Edit)
+	route.HandleFunc("/admin/employe/insert", model.Insert)
+	route.HandleFunc("/admin/employe/update", model.Update)
+	route.HandleFunc("/admin/employe/delete", model.Delete)
+
+	route.HandleFunc("/admin/book", model.IndexBook)
+	route.HandleFunc("/admin/book/show", model.ShowBook)
+	route.HandleFunc("/admin/book/new", model.NewBook)
+	route.HandleFunc("/admin/book/edit", model.EditBook)
+	route.HandleFunc("/admin/book/insert", model.InsertBook)
+	route.HandleFunc("/admin/book/delete", model.DeleteBook)
+
+	log.Fatal(http.ListenAndServe(":8080", route))
+}

@@ -1,0 +1,35 @@
+{{ define "BookIndex" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> List book </h2>
+    <a href="/admin/book/new">New</a>
+    <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">AuthId</th>
+      <th scope="col">File</th>
+      <th scope="col">Content</th>
+      <th scope="col">View</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{range .}}
+    <tr>
+      <th scope="row">{{ .Id }}</th>
+      <td>{{ .Name }}</td>
+      <td>{{ .AuthId }}</td>
+      <td>{{ .File }}</td>
+      <td>{{ .Content }}</td>
+      <td><a href="/admin/book/show?id={{ .Id }}">Views</a></td>
+      <td><a href="/admin/book/edit?id={{ .Id }}">Edit</a></td>
+      <td><a href="/admin/book/delete?id={{ .Id }}">Delete</a><td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+  {{ template "Footer" }}
+{{ end }}

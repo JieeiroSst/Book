@@ -1,0 +1,34 @@
+{{ define "BookEdit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+    <h2 class="col">BOOK</h2>
+    <form method="POST" action="insert" enctype="multipart/form-data">
+      <input type="hidden" name="uid" value="{{ .Id }}" />
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="name" value="{{ .Name }}">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">AuthId</label>
+        <input type="text" class="form-control" name="authId" id="authId" value="{{ .AuthId }}">
+      </div>
+
+      <div class="form-group">
+        <label for="">file book/label>
+        <input type="file" class="form-control-file" name="file" id="file" onchange="showMyImage(this)"aria-describedby="fileHelpId" multiple>
+      </div>
+
+      <div class="form-group">
+        <img src="/public/admin/img/click.svg" class="select_img w-25 h-25" alt="ảnh đại diện" id="file">
+      </div>
+
+       <div class="form-group">
+        <label for="exampleInputPassword1">Content</label>
+        <input type="text" class="form-control" name="content" id="content" value="{{ .Content }}">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save book</button>
+    </form>
+  {{ template "Footer" }}
+{{ end }}
