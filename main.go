@@ -35,5 +35,7 @@ func main() {
 	route.HandleFunc("/admin/book/insert", model.InsertBook)
 	route.HandleFunc("/admin/book/delete", model.DeleteBook)
 
+	route.HandleFunc("/admin/user", model.IndexUser)
+
 	log.Fatal(http.ListenAndServe(":8080", route))
 }

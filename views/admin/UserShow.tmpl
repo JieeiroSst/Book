@@ -1,0 +1,25 @@
+{{define "UserShow"}}
+  {{template "Header"}}
+  {{template "Menu"}}
+    <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">EmpId</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{range .}}
+    <tr>
+      <th scope="row">{{ .Id }}</th>
+      <td>{{ .Name }}</td>
+      <td>{{ .Password }}</td>
+      <td>{{ .EmpId }}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+  {{template "Footer"}}
+{{end}}
