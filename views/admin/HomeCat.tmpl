@@ -1,0 +1,32 @@
+{{define "HomeCat"}}
+  {{template "HomeHeader"}}
+  <div class="container-fluid">
+  <div class="row content">
+    {{template "HomeMenu"}}
+
+    <div class="col-sm-9">
+
+      <div class="well">
+     <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Name</th>
+          <th scope="col">File</th>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+        <tbody>
+        {{range .}}
+          <tr>
+            <th scope="row">{{ .Id }}</th>
+            <td>{{ .Name }}</td>
+            <td>{{ .File }}</td>
+            <td><a href="/keikibook/book/view?id={{ .Id }}">Views</a></td>
+          </tr>
+          {{end}}
+        </tbody>
+      </div>
+
+{{template "HomeFooter"}}
+{{end}}

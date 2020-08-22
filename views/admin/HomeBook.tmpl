@@ -1,0 +1,7 @@
+{{ define "HomeBook" }}
+  {{ template "HomeHeader" }}
+    {{ template "HomeMenu"  }}
+    <input type="hidden" name="uid" value="{{ .Id }}" />
+    <embed src="uploads/{{.File}}" width="1000px" height="1000px" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" frameborder="0">
+  {{ template "HomeFooter" }}
+{{ end }}

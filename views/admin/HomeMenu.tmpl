@@ -1,0 +1,33 @@
+{{define "HomeMenu"}}
+
+<div class="col-sm-3 sidenav hidden-xs">
+      <h2>keikibook</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="/keikibook">Dashboard</a></li>
+        <li><a href="/keikibook/main">Main</a></li>
+        <li><a href="/keikibook/cat?id=1">Information</a></li>
+        <li><a href="/keikibook/cat?id=2">Văn Học</a></li>
+        <li><a href="/keikibook/cat?id=3">Lịch Sử</a></li>
+        <li><a href="/keikibook/cat?id=4">Toán Học</a></li>
+        <li><a href="/keikibook/cat?id=5">Thiên Văn Học</a></li>
+        <li><a href="/keikibook/cat?id=6">Hóa Học</a></li>
+        <li><a href="/keikibook/cat?id=7">Vật Lý</a></li>
+        <li><a href="/keikibook/cat?id=8">Lập trình nhúng</a></li>
+        <li><a href="/keikibook/cat?id=9">Audurino</a></li>
+        <li><a href="/keikibook/cat?id=10">Sinh Vật Đai dương</a></li>
+        <li><a href="/keikibook/cat?id=11">Sinh vật cổ đại</a></li>
+        <li><a href="/keikibook/cat?id=12">Công nghệ phần mền</a></li>
+        <li><a href="/keikibook/cat?id=13">Vật lý hiện đại</a></li>
+        <li><a href="/keikibook/cat?id=14">Sách Lập Trình</a></li>
+      </ul><br>
+      <form class="form-inline" method="POST" action="keikibook/logout">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button type="submit" class="btn btn-primary">logout</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br>
+
+{{end}}

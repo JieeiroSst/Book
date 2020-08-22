@@ -12,6 +12,10 @@ import (
 func main() {
 	route := mux.NewRouter()
 	log.Println("Server started on: http://localhost:8080")
+
+	fs := http.FileServer(http.Dir("./uploads"))
+	http.Handle("/uploads", fs)
+
 	route.HandleFunc("/admin", model.Home)
 
 	route.HandleFunc("/admin/login", model.ShowLogin)
@@ -43,6 +47,7 @@ func main() {
 	route.HandleFunc("/admin/category/new", model.NewCategory)
 	route.HandleFunc("/admin/category/edit", model.EditCategory)
 	route.HandleFunc("/admin/category/insert", model.InsertCategory)
+	route.HandleFunc("/admin/category/update", model.UPdateCategory)
 	route.HandleFunc("/admin/category/delete", model.DeleteCategory)
 
 	route.HandleFunc("/keikibook", models.HomeHome)
@@ -52,6 +57,10 @@ func main() {
 	route.HandleFunc("/keikibook/logins", models.Signin)
 	route.HandleFunc("/keikibook/bug", models.Bug)
 	route.HandleFunc("/keikibook/logout", models.LogoutHandler)
+	route.HandleFunc("/keikibook/menu", models.MenuCategory)
+	route.HandleFunc("/keikibook/main", models.IndexBookHome)
+	route.HandleFunc("/keikibook/book/view", models.BookDetail)
+	route.HandleFunc("/keikibook/cat", models.BookCat)
 
 	log.Fatal(http.ListenAndServe(":8080", route))
 }

@@ -7,13 +7,13 @@ import (
 )
 
 var cookieHandlers = securecookie.New(
-	securecookie.GenerateRandomKey(64),
-	securecookie.GenerateRandomKey(32))
+	securecookie.GenerateRandomKey(80),
+	securecookie.GenerateRandomKey(40))
 
 func GetUserNames(request *http.Request) (userName string) {
 	if cookie, err := request.Cookie("session"); err == nil {
 		cookieValue := make(map[string]string)
-		if err = cookieHandler.Decode("session", cookie.Value, &cookieValue); err == nil {
+		if err = cookieHandlers.Decode("session", cookie.Value, &cookieValue); err == nil {
 			userName = cookieValue["name"]
 		}
 	}
