@@ -37,5 +37,12 @@ func main() {
 
 	route.HandleFunc("/admin/user", model.IndexUser)
 
+	route.HandleFunc("/admin/category", model.IndexCategory)
+	route.HandleFunc("/admin/category/show", model.ShowCattegory)
+	route.HandleFunc("/admin/category/new", model.NewCategory)
+	route.HandleFunc("/admin/category/edit", model.EditCategory)
+	route.HandleFunc("/admin/category/insert", model.InsertCategory)
+	route.HandleFunc("/admin/category/delete", model.DeleteCategory)
+
 	log.Fatal(http.ListenAndServe(":8080", route))
 }

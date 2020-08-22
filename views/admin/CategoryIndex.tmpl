@@ -1,0 +1,31 @@
+{{define "CategoryIndex"}}
+
+  {{template "Header"}}
+  {{template "Menu"}}
+    <h2> List category </h2>
+    <a href="/admin/category/new">New</a>
+    <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">View</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{range .}}
+    <tr>
+      <th scope="row">{{ .Id }}</th>
+      <td>{{ .Name }}</td>
+      <td><a href="/admin/category/show?id={{ .Id }}">Views</a></td>
+      <td><a href="/admin/category/edit?id={{ .Id }}">Edit</a></td>
+      <td><a href="/admin/category/delete?id={{ .Id }}">Delete</a><td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+  {{template "Footer"}}
+
+{{end}}

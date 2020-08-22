@@ -1,0 +1,25 @@
+{{define "CategoryShow"}}
+
+  {{template "Header"}}
+  {{template "Menu"}}
+    <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ .Id }}</th>
+      <td>{{ .Name }}</td>
+      <td><a href="/admin/category/edit?id={{ .Id }}">Edit</a></td>
+      <td><a href="/admin/category/delete?id={{ .Id }}">Delete</a><td>
+    </tr>
+  </tbody>
+</table>
+  {{template "Footer"}}
+
+{{end}}

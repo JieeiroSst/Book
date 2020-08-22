@@ -1,0 +1,16 @@
+{{define "CategoryNew"}}
+
+  {{template "Header"}}
+  {{template "Menu"}}
+    <h2 class="col">Category</h2>
+    <form method="POST" action="insert" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="name">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save book</button>
+    </form>
+  {{template "Footer"}}
+
+{{end}}
