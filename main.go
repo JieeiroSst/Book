@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	model "github.com/JIeeiroSst/models/admin"
+	models "github.com/JIeeiroSst/models/home"
 	"github.com/gorilla/mux"
 )
 
@@ -43,6 +44,14 @@ func main() {
 	route.HandleFunc("/admin/category/edit", model.EditCategory)
 	route.HandleFunc("/admin/category/insert", model.InsertCategory)
 	route.HandleFunc("/admin/category/delete", model.DeleteCategory)
+
+	route.HandleFunc("/keikibook", models.HomeHome)
+	route.HandleFunc("/keikibook/login", models.ShowLogin)
+	route.HandleFunc("/keikibook/signup", models.ShowSignUp)
+	route.HandleFunc("/keikibook/signups", models.Signup)
+	route.HandleFunc("/keikibook/logins", models.Signin)
+	route.HandleFunc("/keikibook/bug", models.Bug)
+	route.HandleFunc("/keikibook/logout", models.LogoutHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", route))
 }
